@@ -1,10 +1,10 @@
-# GraphQL server in Go - hello world
+# GraphQL server in Go - Hello World
 If you are new to GraphQL in Go, this repository should get you started quickly. The script `Server.go` starts a http server that accepts GraphQL queries at the endpoint `/graphql`. 
 
-I use [this](https://github.com/graphql-go/graphql) implementation of GraphQL, just because there is more documentation available. 
+I use [graphql-go/graphql](https://github.com/graphql-go/graphql), one of the few implementations of GraphQL in Go, just because there is more documentation available. Another implementation I found is [neelance/graphql-go](https://github.com/neelance/graphql-go).
 
 ## Getting started
-I dockerized the server to make it as easy as possible to play with the code.
+First, start the server and then send a couple of requests with GraphQL queries. I dockerized the server to make it as easy as possible to get started.
 
     go get github.com/stefanhengl/graphql-goalang-hw
     docker build -t graphql-server .
@@ -19,6 +19,7 @@ Of course, you can also run the server outside docker. Make sure you have all de
     🌍 Listening on http://localhost:9090
 
 ## Sending requests
+When receiving an HTTP GET request, the GraphQL query should be specified in the "query" query string ([source](http://graphql.org/learn/serving-over-http/#get-request)).
     
     GET /graphql?query={hello}
 
