@@ -1,6 +1,6 @@
-// Hello world example for a graphql API in golang
+// Hello world example for a GraphQL server in golang
 //
-// The code starts an http server which exposes an graphql API
+// The code starts an http server which exposes a GraphQL API
 // supporting queries and mutations.
 //
 // Postman GET Requests:
@@ -46,6 +46,7 @@ var u = user{"john", "doe"}
 
 func init() {
 	// init initializes the  graphql schema with supported queries and mutations
+	// The schema is required for parsing the query strings.
 	// The query supports two fields: A simple string field "hello" and a more complex field "user"
 	// The mutation supports updating the user field
 	var userType = graphql.NewObject(graphql.ObjectConfig{
@@ -60,6 +61,7 @@ func init() {
 		},
 	})
 
+	// Defined supported query fields. Each field comes with its own resovler
 	fields := graphql.Fields{
 		"hello": &graphql.Field{
 			Type: graphql.String,
@@ -109,7 +111,6 @@ func init() {
 }
 
 func graphqlHandler(w http.ResponseWriter, r *http.Request) {
-
 	// read out query string
 	// https://golang.org/pkg/net/http/#Request
 	// https://golang.org/pkg/net/url/#URL.Query
@@ -117,7 +118,7 @@ func graphqlHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(url["query"][0])
 	params := graphql.Params{Schema: schema, RequestString: url["query"][0]}
 
-	// send query string to graphql
+	// send query string to GraphQL
 	res := graphql.Do(params)
 	if res.HasErrors() {
 		log.Fatalf("Failed due to errors: %v\n", res.Errors)
@@ -135,6 +136,8 @@ func graphqlHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// create route
 	r := mux.NewRouter()
+
+	// this line connects to the server to GraphQL
 	r.HandleFunc("/graphql", graphqlHandler)
 	http.Handle("/", r)
 
