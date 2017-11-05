@@ -1,0 +1,173 @@
+{
+	"variables": [],
+	"info": {
+		"name": "graphql-golang-hw",
+		"_postman_id": "b447a422-1319-d3ca-7046-c44d0ac82b19",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9090/graphql?query={hello}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"graphql"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{hello}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImxlZ2FjeS10b2tlbi1rZXkiLCJ0eXAiOiJKV1QifQ.eyJqdGkiOiJhMzI0YTFlYjY4NTE0NWMwYjZmZWNiNTIwNjcyZDU2ZCIsInN1YiI6InRlc3QxIiwiYXV0aG9yaXRpZXMiOlsidGVzdDEiLCJjbGllbnRzLnNlY3JldCJdLCJzY29wZSI6WyJjbGllbnRzLnNlY3JldCIsInRlc3QxIl0sImNsaWVudF9pZCI6InRlc3QxIiwiY2lkIjoidGVzdDEiLCJhenAiOiJ0ZXN0MSIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiODI0ZTBjNmYiLCJpYXQiOjE1MDY2ODQzMjEsImV4cCI6MTUwNjc3NDMyMSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3VhYS9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjbGllbnRzIiwidGVzdDEiXX0.fCUuXwdH7Pae8805tBWe_4JX1RVTcX_HOQYvUkeMbH4-Ti-M87SZSgxzu8Lv7ES54jtz5t2IHSSHt658Ufkp_29MSab_X8Dh_lrqYGHrinYzYa4IGYOokzcMltpAvWl7zSPCUgXJmG7zLF2uHHZr6-PhHukI65IrlIa5i6a_iGHg7ty7xEWAtSk7I1yZhLqs2e_39DZNBpPugcquMDJmDzyY3sMUU-12R0e4irvx11XbvWybINg-E22hqn9Pes_lUpG741LTdUbwwU52Qmkofa5r8uqGlLO7Sy-X2TJfABq3bEs29HS5GowAXQnBgx9BTar0HsBvdPpauVLM-V1QBQ",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadfile",
+							"value": "",
+							"description": "hello",
+							"type": "file",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Change User",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9090/graphql?query=mutation {changeUser(first: \"foo\", last: \"bar\")}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"graphql"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "mutation {changeUser(first: \"foo\", last: \"bar\")}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImxlZ2FjeS10b2tlbi1rZXkiLCJ0eXAiOiJKV1QifQ.eyJqdGkiOiJhMzI0YTFlYjY4NTE0NWMwYjZmZWNiNTIwNjcyZDU2ZCIsInN1YiI6InRlc3QxIiwiYXV0aG9yaXRpZXMiOlsidGVzdDEiLCJjbGllbnRzLnNlY3JldCJdLCJzY29wZSI6WyJjbGllbnRzLnNlY3JldCIsInRlc3QxIl0sImNsaWVudF9pZCI6InRlc3QxIiwiY2lkIjoidGVzdDEiLCJhenAiOiJ0ZXN0MSIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiODI0ZTBjNmYiLCJpYXQiOjE1MDY2ODQzMjEsImV4cCI6MTUwNjc3NDMyMSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3VhYS9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjbGllbnRzIiwidGVzdDEiXX0.fCUuXwdH7Pae8805tBWe_4JX1RVTcX_HOQYvUkeMbH4-Ti-M87SZSgxzu8Lv7ES54jtz5t2IHSSHt658Ufkp_29MSab_X8Dh_lrqYGHrinYzYa4IGYOokzcMltpAvWl7zSPCUgXJmG7zLF2uHHZr6-PhHukI65IrlIa5i6a_iGHg7ty7xEWAtSk7I1yZhLqs2e_39DZNBpPugcquMDJmDzyY3sMUU-12R0e4irvx11XbvWybINg-E22hqn9Pes_lUpG741LTdUbwwU52Qmkofa5r8uqGlLO7Sy-X2TJfABq3bEs29HS5GowAXQnBgx9BTar0HsBvdPpauVLM-V1QBQ",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadfile",
+							"value": "",
+							"description": "hello",
+							"type": "file",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Query User",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9090/graphql?query={user{first,last}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"graphql"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{user{first,last}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImxlZ2FjeS10b2tlbi1rZXkiLCJ0eXAiOiJKV1QifQ.eyJqdGkiOiJhMzI0YTFlYjY4NTE0NWMwYjZmZWNiNTIwNjcyZDU2ZCIsInN1YiI6InRlc3QxIiwiYXV0aG9yaXRpZXMiOlsidGVzdDEiLCJjbGllbnRzLnNlY3JldCJdLCJzY29wZSI6WyJjbGllbnRzLnNlY3JldCIsInRlc3QxIl0sImNsaWVudF9pZCI6InRlc3QxIiwiY2lkIjoidGVzdDEiLCJhenAiOiJ0ZXN0MSIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiODI0ZTBjNmYiLCJpYXQiOjE1MDY2ODQzMjEsImV4cCI6MTUwNjc3NDMyMSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3VhYS9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjbGllbnRzIiwidGVzdDEiXX0.fCUuXwdH7Pae8805tBWe_4JX1RVTcX_HOQYvUkeMbH4-Ti-M87SZSgxzu8Lv7ES54jtz5t2IHSSHt658Ufkp_29MSab_X8Dh_lrqYGHrinYzYa4IGYOokzcMltpAvWl7zSPCUgXJmG7zLF2uHHZr6-PhHukI65IrlIa5i6a_iGHg7ty7xEWAtSk7I1yZhLqs2e_39DZNBpPugcquMDJmDzyY3sMUU-12R0e4irvx11XbvWybINg-E22hqn9Pes_lUpG741LTdUbwwU52Qmkofa5r8uqGlLO7Sy-X2TJfABq3bEs29HS5GowAXQnBgx9BTar0HsBvdPpauVLM-V1QBQ",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadfile",
+							"value": "",
+							"description": "hello",
+							"type": "file",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
