@@ -1,9 +1,9 @@
-# golang graphql server - hello world
+# GraphQL server in Go - hello world
 
 ## Getting started
     go get github.com/stefanhengl/graphql-goalang-hw
     docker build -t graphql-server .
-    docker run graphql-server
+    docker run -p 9090:9090 graphql-server
 
     🌍 Listening on http://localhost:9090
 
@@ -48,4 +48,4 @@
     }
 
 ## Postman
-Open the Postman collection `graphql-golang.hw.postlam_collection` which contains templates for all the requests above.
+The Postman collection `graphql-golang.hw.postlam_collection` contains templates for all the requests above ([doc](https://www.getpostman.com/docs/postman/collections/data_formats)). 
